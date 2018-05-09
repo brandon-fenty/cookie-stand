@@ -15,4 +15,4 @@ This application is designed to track the amount of customers and the average nu
 ​
 ​
 ## Credits and Collaborations
-<!-- Give credit (and a link) to other people or resources that helped you build this application. -->
+- Random number generator sourced from Mozilla Developers Network
