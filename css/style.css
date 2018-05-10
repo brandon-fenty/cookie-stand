@@ -4,7 +4,7 @@ body, h1, h2, h3, h4, h5, h6 {
 }
 
 body {
-    background-color: whitesmoke;
+    background-color: bisque;
 }
 
 h1 {
@@ -14,6 +14,26 @@ h1 {
 img {
     max-width: 100%;
     height: auto;
+}
+
+form {
+    margin: 20px;
+}
+
+table, th, td {
+    border: 1px black solid;
+    padding: 5px;
+    overflow: scroll;
+}
+
+table {
+    max-width: 40%;
+    padding: 10px;
+    margin: auto;
+}
+
+td {
+    font-size: smaller;
 }
 
 .header1 {
@@ -39,4 +59,12 @@ img {
 
 .border {
     border: 2px solid salmon;
+}
+
+.fontSizeSmall {
+    font-size: 2vw;
+}
+
+.goldenrod {
+    color: goldenrod;
 }

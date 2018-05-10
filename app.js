@@ -2,6 +2,8 @@
 
 // Create an array for shop hours
 var hours = ['6 AM', '7 AM', '8 AM', '9 AM', '10 AM', '11 AM', '12 PM', '1 PM', '2 PM', '3 PM', '4 PM', '5 PM', '6 PM', '7 PM', '8 PM'];
+// Declare global variable for form
+var newStoreForm = document.getElementById('newStoreForm');
 
 // Declare main array
  var allStores = [];
@@ -81,6 +83,33 @@ Store.prototype.render = function() {
 
 // function to render all table
 function renderAllStores () {
+    // Clear old table for newly rendered table
+    cookieSales.innerHTML = '';
+    // Link table to HTML
+    var tableEl = document.getElementById('cookieSales');
+    // Create table row element
+    var trEl = document.createElement('tr');
+    // create column for locations
+    var storeFrontTdEl = document.createElement('td');
+    // Create table row element
+    storeFrontTdEl.textContent = 'Store Location';
+    trEl.append(storeFrontTdEl);
+
+
+    // Create table header
+    for(var j in hours) {
+        // Create table data element
+        var tdEl = document.createElement('td');
+        tdEl.textContent = hours[j];
+    
+        trEl.append(tdEl)
+    }
+    var totalSalesTdEl = document.createElement('td');
+    totalSalesTdEl.textContent = 'Total cookies sold';
+    trEl.append(totalSalesTdEl);
+  
+    tableEl.append(trEl);
+
     for (var i in allStores) {
         allStores[i].render();
     }
@@ -88,3 +117,41 @@ function renderAllStores () {
 
 // // Function call
 renderAllStores();
+
+// Random num gen global function
+function randomNumGen (min, max) {
+    min = Math.ceil(min);
+    max = Math.ceil(max);
+    return Math.floor(Math.random() * (max - min) + 1 + min);
+}
+
+// Create submit handler
+function handleSubmitNewData(event) {
+    event.preventDefault();
+    // Prevent from proceeding without all data filled
+    if (!event.target.location.value || !event.target.minCust.value || !event.target.maxCust.value || !event.target.avgCookiesCust.value) {
+        return alert('Please complete the form.')
+    }
+    // Clear the table
+    var addLocation = event.target.location.value
+    var addMinCust = event.target.minCust.value
+    var addMaxCust = event.target.maxCust.value 
+    var addAvgCookies = event.target.avgCookiesCust.value 
+
+    // Input data into new object
+    var newStore = new Store (addLocation, addMinCust, addMaxCust, addAvgCookies);
+        
+    // Clear the form
+    event.target.location.value = null;
+    event.target.minCust.value = null;
+    event.target.maxCust.value = null;
+    event.target.avgCookiesCust.value = null;
+
+    // Render data
+    renderAllStores();
+}
+
+// Create event listener for submit button
+console.log(newStoreForm);
+newStoreForm.addEventListener('submit', handleSubmitNewData);
+
