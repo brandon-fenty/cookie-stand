@@ -77,25 +77,25 @@ Store.prototype.render = function() {
 
 // function to render all table
 function renderAllStores () {
-
+    cookieSales.innerHTML = '';
     // Link table to HTML
     var tableEl = document.getElementById('cookieSales');
     // Create table row element
     var trEl = document.createElement('tr');
     // create column for locations
-    var storeFrontTdEl = document.createElement('td');
+    var thEl = document.createElement('th');
     // Create table row element
-    storeFrontTdEl.textContent = 'Store Location';
-    trEl.append(storeFrontTdEl);
+    thEl.textContent = 'Store Location';
+    trEl.append(thEl);
 
 
     // Create table header
     for(var j in hours) {
         // Create table data element
-        var tdEl = document.createElement('td');
-        tdEl.textContent = hours[j];
+        var thEl = document.createElement('th');
+        thEl.textContent = hours[j];
     
-        trEl.append(tdEl)
+        trEl.append(thEl)
     }
     var totalSalesTdEl = document.createElement('td');
     totalSalesTdEl.textContent = 'Total';
@@ -128,10 +128,7 @@ function randomNumGen (min, max) {
 // Create submit handler
 function handleSubmitNewData(event) {
     event.preventDefault();
-    // Prevent from proceeding without all data filled
-    if (!event.target.location.value || !event.target.minCust.value || !event.target.maxCust.value || !event.target.avgCookiesCust.value) {
-        return alert('Please complete the form.')
-    }
+
     // Clear the table
     var addLocation = event.target.location.value
     var addMinCust = event.target.minCust.value
