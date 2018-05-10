@@ -2,7 +2,6 @@
 
 // Declare global variable for form
 var newStoreForm = document.getElementById('newStoreForm');
-
 // Declare main array
  var allStores = [];
 
@@ -77,25 +76,31 @@ Store.prototype.render = function() {
 
 // function to render all table
 function renderAllStores () {
+
     cookieSales.innerHTML = '';
+
     // Link table to HTML
     var tableEl = document.getElementById('cookieSales');
     // Create table row element
     var trEl = document.createElement('tr');
     // create column for locations
+
     var thEl = document.createElement('th');
     // Create table row element
     thEl.textContent = 'Store Location';
     trEl.append(thEl);
 
 
+
     // Create table header
     for(var j in hours) {
         // Create table data element
+
         var thEl = document.createElement('th');
         thEl.textContent = hours[j];
     
         trEl.append(thEl)
+
     }
     var totalSalesTdEl = document.createElement('td');
     totalSalesTdEl.textContent = 'Total';
@@ -151,3 +156,4 @@ function handleSubmitNewData(event) {
 // Create event listener for submit button
 console.log(newStoreForm);
 newStoreForm.addEventListener('submit', handleSubmitNewData);
+
