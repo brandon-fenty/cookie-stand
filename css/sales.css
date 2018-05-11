@@ -22,13 +22,11 @@ form {
 
 table, th, td {
     border: 1px black solid;
-    padding: 5px;
     overflow: scroll;
 }
 
 table {
     max-width: 40%;
-    padding: 10px;
     margin: auto;
 }
 
@@ -63,8 +61,4 @@ td {
 
 .fontSizeSmall {
     font-size: 2vw;
-}
-
-.goldenrod {
-    color: goldenrod;
 }
