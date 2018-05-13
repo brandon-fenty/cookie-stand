@@ -1,3 +1,8 @@
+
+/* ====================== */
+/*       nav style        */
+/* ====================== */
+
 body {
     font-family: Helvetica, sans-serif;
     background-color: whitesmoke;
@@ -33,10 +38,16 @@ main {
     margin: 0 auto;
 }
 
-a:link {
+button {
+    border: none;
+    padding: 5px 10px;
     color: white;
+    background-color: #777;
+    font-size: 14px;
+    transition: 350ms;
+    cursor: pointer;
 }
 
-a:visited {
-    background-color: aqua;
+button:hover {
+    background: salmon;
 }
