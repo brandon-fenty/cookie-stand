@@ -90,8 +90,6 @@ function renderAllStores () {
     thEl.textContent = 'Store Location';
     trEl.append(thEl);
 
-
-
     // Create table header
     for(var j in hours) {
         // Create table data element
@@ -103,7 +101,7 @@ function renderAllStores () {
 
     }
     var totalSalesTdEl = document.createElement('td');
-    totalSalesTdEl.textContent = 'Total';
+    totalSalesTdEl.textContent = 'Total Per Day';
     trEl.append(totalSalesTdEl);
   
     tableEl.append(trEl);
