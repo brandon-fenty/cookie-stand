@@ -15,6 +15,7 @@ header {
     background-color: #286D8A;
     top: 0;
     position: fixed;
+    z-index: 1;
 }
 
 nav {
@@ -56,11 +57,14 @@ button:hover {
 /*       main style       */
 /* ====================== */
 
+
+/* ------home page------- */
+
 .home-container {
     max-width: 1024px;
     height: auto;
     margin: 0 auto;
-    margin-top: 70px;
+    margin-top: 85px;
 }
 
 .logo-container {
@@ -87,3 +91,47 @@ button:hover {
     font-size: 18px;
     color: black;
 }
+
+/* -------about-------- */
+
+#about {
+    background-color: #837D4e; 
+}
+
+#product {
+    background-color: white;
+}
+
+
+
+.main-container {
+    width: 1024px;
+    margin: 0 auto;
+    margin-top: 40px;
+    padding: 10px;
+    border-radius: 25px
+}
+
+.main-container h2 {
+    text-align: center;
+    font-size: 34px;
+    padding: 10px;
+    color: white;
+}
+
+.main-img-container {
+    margin: 0 auto;
+    padding: 30px 85px;
+}
+
+.blue {
+    color: #286D8A;
+}
+
+ p {
+    text-align: center;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 24px;
+    padding: 10px;
+}
+
