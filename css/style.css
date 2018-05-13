@@ -94,22 +94,33 @@ button:hover {
 
 /* -------about-------- */
 
+.float-left {
+    float: left;
+}
+
+.float-right {
+    float: right;
+}
+
+p {
+    text-align: center;
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 24px;
+    padding: 10px;
+}
+
 #about {
     background-color: #837D4e; 
 }
 
-#product {
-    background-color: white;
-}
-
-
 
 .main-container {
     width: 1024px;
+    height: auto;
     margin: 0 auto;
     margin-top: 40px;
     padding: 10px;
-    border-radius: 25px
+    /* border-radius: 15px */
 }
 
 .main-container h2 {
@@ -120,18 +131,26 @@ button:hover {
 }
 
 .main-img-container {
+    padding: 30px 210px;
+}
+
+#product img {
     margin: 0 auto;
-    padding: 30px 85px;
+    padding: 30px;
 }
 
-.blue {
+#product {
+    background-color: white;
     color: #286D8A;
+    margin: 40px auto;
 }
 
- p {
-    text-align: center;
-    font-family: 'Open Sans Condensed', sans-serif;
-    font-size: 24px;
-    padding: 10px;
+#product p {
+    width: 600px;
+    padding: 40px;
+}
+
+#product h2 {
+    color: black;
 }
 
