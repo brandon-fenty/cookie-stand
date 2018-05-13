@@ -58,8 +58,6 @@ button:hover {
 /* ====================== */
 
 
-/* ------home page------- */
-
 .home-container {
     max-width: 1024px;
     height: auto;
@@ -92,8 +90,6 @@ button:hover {
     color: black;
 }
 
-/* -------about-------- */
-
 .float-left {
     float: left;
 }
@@ -113,20 +109,18 @@ p {
     background-color: #837D4e; 
 }
 
-
 .main-container {
     width: 1024px;
     height: auto;
     margin: 0 auto;
     margin-top: 40px;
     padding: 10px;
-    /* border-radius: 15px */
 }
 
 .main-container h2 {
     text-align: center;
     font-size: 34px;
-    padding: 10px;
+    padding: 30px;
     color: white;
 }
 
@@ -140,8 +134,8 @@ p {
 }
 
 #product {
-    background-color: white;
-    color: #286D8A;
+    background-color:#438496;;
+    color: white;
     margin: 40px auto;
 }
 
@@ -152,5 +146,61 @@ p {
 
 #product h2 {
     color: black;
+    padding: 30px;
 }
 
+#locations {
+    background-color: salmon; 
+}
+
+
+#locations ul {
+    padding: 30px;
+}
+
+#merch h2 {
+    color: #837D4e;
+}
+
+#merch li {
+    display: inline-block;
+    padding: 30px;
+}
+
+/* ====================== */
+/*      footer style      */
+/* ====================== */
+
+footer {
+    width: 100%;
+    height: 125px;
+    background-color: #286D8A;
+    text-align: center;
+    padding: 30px;
+}
+
+footer h2 {
+    color: white;
+    font-size: 24px;
+    margin: 10px;
+    
+}
+
+footer li {
+    color: white;
+}
+
+footer p {
+    padding: 15px;
+}
+
+footer h6 {
+    padding: 15px;
+    font-size: 14px;
+    color: #999;
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
