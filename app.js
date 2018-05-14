@@ -3,7 +3,7 @@
 // Declare global variable for form
 var newStoreForm = document.getElementById('newStoreForm');
 // Declare main array
- var allStores = [];
+var allStores = [];
 
  // Create an array for shop hours
 var hours = ['6 AM', '7 AM', '8 AM', '9 AM', '10 AM', '11 AM', '12 PM', '1 PM', '2 PM', '3 PM', '4 PM', '5 PM', '6 PM', '7 PM', '8 PM'];
@@ -21,6 +21,7 @@ function Store (storeFront, minCustomersPerHr, maxCustomersPerHr, averageCookies
     
     allStores.push(this);
 };
+
 
 // Create a random number generator for number of customers
 Store.prototype.calcCustomersPerHour = function() {
@@ -76,15 +77,13 @@ Store.prototype.render = function() {
 
 // function to render all table
 function renderAllStores () {
-
+    // Clear old table
     cookieSales.innerHTML = '';
-
     // Link table to HTML
     var tableEl = document.getElementById('cookieSales');
     // Create table row element
     var trEl = document.createElement('tr');
     // create column for locations
-
     var thEl = document.createElement('th');
     // Create table row element
     thEl.textContent = 'Store Location';
@@ -93,7 +92,6 @@ function renderAllStores () {
     // Create table header
     for(var j in hours) {
         // Create table data element
-
         var thEl = document.createElement('th');
         thEl.textContent = hours[j];
     
@@ -111,6 +109,45 @@ function renderAllStores () {
     }
 };
 
+// Create a table to total sales for each hour
+function totalSalesPerHour() {
+    // Clear previous
+    totalsTable.innerHTML= '';
+    // Link to DOM
+    var tableEl = document.getElementById('totalsTable');;
+    // Create elements
+    var trEl = document.createElement('tr');
+    var tdEl = document.createElement('td');
+    // Label
+    tdEl.textContent = 'Hourly Totals';
+    trEl.append(tdEl);
+    // For loop to add cookies
+    for(var i in hours) {
+        tdEl = document.createElement('td');
+        // Set an initial value
+        var totalValue;
+        console.log(totalValue);             
+        // Add by store
+        for(var j in avgCookiesPerHour) {
+            totalValue += avgCookiesPerHour[i];
+        } 
+        console.log(totalValue);
+        tdEl.textContent = this.totalValue;
+        
+        trEl.append(tdEl);
+    }
+
+    // Create a final total
+    tdEl = document.createElement('td');
+    var totalValue;
+    for(var j in allStores) {
+        totalValue += this.totalSalesTdEl;
+    }
+    tdEl.textContent = this.totalValue;
+    trEl.append(tdEl);
+    tableEl.append(trEl);
+};
+
 // Create instances for each store
 var pikePlaceMarket = new Store('First and Pike', 23, 65, 6.3);
 var seaTac = new Store('SeaTac Airport', 3, 24, 1.2);
@@ -120,6 +157,8 @@ var alki = new Store('Alki', 2, 16, 4.6);
 
 // Render the table
 renderAllStores();
+totalSalesPerHour();
+
 
 // Random num gen global function
 function randomNumGen (min, max) {
@@ -148,10 +187,9 @@ function handleSubmitNewData(event) {
     event.target.avgCookiesCust.value = null;
 
     // Render data
-    renderAllStores();
+    renderAllStores();totalSalesPerHour();
 }
 
 // Create event listener for submit button
-console.log(newStoreForm);
 newStoreForm.addEventListener('submit', handleSubmitNewData);
 
