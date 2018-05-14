@@ -62,3 +62,7 @@ td {
 .fontSizeSmall {
     font-size: 2vw;
 }
+
+p {
+    text-align: center;
+}
