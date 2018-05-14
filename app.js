@@ -128,7 +128,7 @@ function totalSalesPerHour() {
         var totalValue;
         console.log(totalValue);             
         // Add by store
-        for(var j in hours) {
+        for(var j in avgCookiesPerHour) {
             totalValue += avgCookiesPerHour[i];
         } 
         console.log(totalValue);
